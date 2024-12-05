@@ -34,27 +34,20 @@ public class MyString {
         if (str2.isEmpty()) {
             return true;
         }
+        // Check if str2 is a prefix of str1
+        if (str1.length() < str2.length()) {
+            return false; // str1 is too short to contain str2 as a prefix
+        }
 
-        // Iterate over str1, checking if str2 matches a substring
-        for (int i = 0; i <= str1.length() - str2.length(); i++) {
-            boolean matchFound = true;
-            
-            // Compare each character in the substring with str2
-            for (int j = 0; j < str2.length(); j++) {
-                if (str1.charAt(i + j) != str2.charAt(j)) {
-                    matchFound = false;
-                    break;
-                }
-            }
-
-            // If we found a match, return true
-            if (matchFound) {
-                return true;
+        // Compare the beginning of str1 with str2
+        for (int i = 0; i < str2.length(); i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                return false; // If there's a mismatch, return false
             }
         }
 
-        // If no match is found, return false
-        return false;
+        // If all characters match, return true
+        return true;
     
     }
 }

@@ -130,8 +130,10 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         long hashcode = 0;
-        for (int i = 0; i<arr.length; i++)
-            hashcode += arr[i]*(Math.pow(7, arr.length-1));
+        int n = arr.length;
+        for (int i = 0; i<n; i++){
+            hashcode += arr[i]*(Math.pow(7, n-1-i));
+        }
         
         return hashcode;
     }
@@ -162,7 +164,7 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        if (str1 == null || str2 == null)
+        if (str1.isEmpty() || str2.isEmpty())
             return -2;
         
         int resault = 0;
