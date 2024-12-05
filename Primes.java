@@ -20,7 +20,10 @@ public class Primes {
                  }
              }
          }
- 
+         
+         // Print the primes
+        System.out.println("Prime numbers up to " + n + ":");
+        
          // Count and print all primes, and calculate the percentage of primes
          int sum = 0;
          for (int l = 2; l <= n; l++) {
