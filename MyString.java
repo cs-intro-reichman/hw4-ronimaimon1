@@ -31,23 +31,21 @@ public class MyString {
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
         // If str2 is an empty string, it is always "contained" in str1
-        if (str2.isEmpty()) {
-            return true;
-        }
-        // Check if str2 is a prefix of str1
-        if (str1.length() < str2.length()) {
-            return false; // str1 is too short to contain str2 as a prefix
-        }
-
-        // Compare the beginning of str1 with str2
-        for (int i = 0; i < str2.length(); i++) {
-            if (str1.charAt(i) != str2.charAt(i)) {
-                return false; // If there's a mismatch, return false
-            }
-        }
-
-        // If all characters match, return true
+       // If str2 is empty, it is always contained in str1
+       if (str2.isEmpty()) {
         return true;
+        }
+
+    // Loop through str1 and check substrings of the length of str2
+        for (int i = 0; i <= str1.length() - str2.length(); i++) {
+        // Check if substring from i matches str2
+            if (str1.substring(i, i + str2.length()).equals(str2)) {
+                return true;
+        }
+    }
+
+    // Return false if no match was found
+    return false;
     
     }
 }

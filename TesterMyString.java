@@ -30,12 +30,6 @@ public class TesterMyString {
         boolean test4 = !MyString.contains("baba yaga", "Yaga");
         boolean test5 = !MyString.contains("baba yaga", "babayaga");
 
-        System.out.println(MyString.contains("baba yaga", "baba"));
-        System.out.println(MyString.contains("baba yaga", ""));
-        System.out.println(!MyString.contains("baba yaga", "John Wick is the baba yaga"));
-        System.out.println(!MyString.contains("baba yaga", "Yaga"));
-        System.out.println(!MyString.contains("baba yaga", "babayaga"));
-
 
         int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0) + (test4 ? 1 : 0) +
                      (test5 ? 1 : 0);
